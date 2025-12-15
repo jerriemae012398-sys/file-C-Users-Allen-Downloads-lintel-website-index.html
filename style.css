@@ -25,44 +25,102 @@ body {
 /* =====================
    HEADER
 ===================== */
-header {
-    background-color: #000;
-    height: 100px;
+
+.main-header {
     display: flex;
-    align-items: center;
-    justify-content: center;  /* center first */
-    position: relative;
+    align-items: center;       /* vertical center ng lahat */
+    justify-content: center;   /* center ng nav horizontally */
+    position: relative;        /* para ma-position ang logo independently */
+    height: 100px;
+    background-color: #000;
+    padding: 0 60px;           /* optional horizontal padding */
 }
 
-header img {
-    max-height: 80px;
-    height: auto;
-    width: auto;
-    position: relative;
-    left: -600px ; /* left indent */
+/* Logo sa left, naka-center vertically */
+.main-header img {
+    position: absolute;
+    left: 60px;                /* katumbas ng padding para aligned sa left */
+    top: 50%;                  /* vertical center */
+    transform: translateY(-50%); /* exact center vertically */
+    height: 80px;
 }
+
+/* Nav sa center, naka-flex horizontally */
+.main-nav {
+    display: flex;
+    gap: 36px;
+}
+.main-nav a {
+    display: flex;
+    align-items: center;       /* vertical center ng links */
+    height: 100%;              /* same height as header */
+    color: #87CEEB;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+
 
 /* =====================
    NAVIGATION
 ===================== */
-nav {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(6px);
-    padding: 18px;
-    text-align: center;
+.main-nav {
+    display: flex;
+    gap: 36px;
 }
 
-nav a {
-    margin: 0 18px;
+.main-nav a {
     text-decoration: none;
     color: #87CEEB;
     font-weight: 600;
     transition: 0.3s;
 }
 
-nav a:hover {
+.main-nav a:hover {
     color: white;
 }
+
+.main-nav {
+    display: flex;
+    align-items: center;   /* ITO ANG IMPORTANTE */
+    gap: 36px;
+}
+
+.main-nav a {
+    display: flex;         /* para pantay vertical alignment */
+    align-items: center;
+    height: 100px;         /* same height as header */
+    line-height: 1;
+}
+
+@media (max-width: 400px) {
+    .main-header {
+        flex-direction: column;   /* stack vertically */
+        height: auto;             /* adjust height */
+        padding: 10px 20px;       /* less padding */
+        gap: 10px;
+    }
+
+    .main-nav {
+        flex-wrap: wrap;          /* allow nav links to wrap */
+        justify-content: center;  /* center horizontally */
+        gap: 12px;
+    }
+
+    .main-nav a {
+        height: auto;
+        line-height: normal;
+        font-size: 14px;          /* smaller font */
+    }
+
+    .main-header img {
+        max-height: 60px;         /* smaller logo */
+        width: auto;
+    }
+}
+
+
 
 /* =====================
    SECTIONS
@@ -118,6 +176,22 @@ section {
 .hero-button:hover {
     background-color: #2e4f5e;
 }
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .hero-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
 
 /* =====================
    ABOUT
@@ -342,6 +416,34 @@ section {
 }
 
 
+@media (max-width: 400px) {
+    .services-container {
+        grid-template-columns: 1fr; /* stack vertically */
+        gap: 20px;
+    }
+
+    .service img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .service h3 {
+        font-size: 1rem;
+    }
+
+    .service p {
+        font-size: 0.85rem;
+    }
+
+    .service-detail-box {
+        padding: 20px;
+        font-size: 0.85rem;
+    }
+
+    .service-detail-box h3 {
+        font-size: 1.2rem;
+    }
+}
 
 
 
@@ -448,6 +550,8 @@ footer {
     .team-member {
         width: 100%;
     }
+
+    
 }
 
 /* =====================
@@ -627,6 +731,22 @@ footer {
 }
 
 .team-member:nth-child(4),
+
 .team-member:nth-child(5) {
     grid-column: span 1; /* nakalagay sa second row, center horizontally */
+}
+@media (max-width: 400px) {
+    .team-container {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member {
+        width: 80%;
+        margin: 0 auto 20px auto;
+    }
+
+    .team-member img {
+        width: 100%;
+        height: auto;
+    }
 }
