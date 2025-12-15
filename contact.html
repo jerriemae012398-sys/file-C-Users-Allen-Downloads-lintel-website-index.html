@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us - Lintel Enterprise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <img src="images/logo.jpeg" alt="Lintel Enterprise Logo">
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+
+<!-- Main Content -->
+<main>
+    <section class="section contact" id="contact">
+        <div class="section-inner">
+            <h2>Contact Us</h2>
+            <p>Email: info@lintel.com.ph </p>
+            <p>Phone: +63 900 000 0000</p>
+            <div class="contact-icons">
+                <a href="https://wa.me/639000000000" target="_blank">
+                    <img src="images/watsapp.png" alt="WhatsApp">
+                </a>
+                <a href="https://facebook.com/yourpage" target="_blank">
+                    <img src="images/facebook.jpg" alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Schedule Appointment -->
+<section class="section appointment" id="appointment">
+    <div class="section-inner">
+        <h2>Schedule an Appointment</h2>
+        <p>Fill out the form below to request an appointment. We'll get back to you via email.</p>
+        <form action="mailto:yourcompany@email.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="Phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Select Date</label>
+                <input type="date" id="date" name="Date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">Select Time Slot</label>
+                <select id="time" name="Time" required>
+                    <option value="">--Choose a Time--</option>
+                    <option>9:00 AM</option>
+                    <option>10:00 AM</option>
+                    <option>11:00 AM</option>
+                    <option>1:00 PM</option>
+                    <option>2:00 PM</option>
+                    <option>3:00 PM</option>
+                    <option>4:00 PM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="details">Additional Details</label>
+                <textarea id="details" name="Details" rows="4" placeholder="Any special requests..."></textarea>
+            </div>
+
+            <button type="submit" class="hero-button">Submit Request</button>
+        </form>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    © 2025 Lintel Enterprise. All rights reserved.
+</footer>
+
+</body>
+</html>

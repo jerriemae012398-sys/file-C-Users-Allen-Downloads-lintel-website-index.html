@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lintel Enterprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+    <img src="images/logo.jpeg" alt="Company Logo">
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services">
+    <div class="section-inner">
+        <h2>Our Services</h2>
+
+        <!-- Summary Boxes -->
+        <div class="services-container">
+            <div class="service" data-target="software-development">
+                <img src="images/software.jpg" alt="Software Development">
+                <h3>Software Development</h3>
+                <p>Custom software solutions for your business.</p>
+            </div>
+            <div class="service" data-target="hardware-distribution">
+                <img src="images/hardware.jpg" alt="Hardware Distribution">
+                <h3>Hardware Distribution</h3>
+                <p>Reliable IT hardware supply and support.</p>
+            </div>
+            <div class="service" data-target="cybersecurity-consulting">
+                <img src="images/cybersecurity.jpg" alt="Cybersecurity Consulting">
+                <h3>Cybersecurity Consulting</h3>
+                <p>Protect your business and IT infrastructure.</p>
+            </div>
+        </div>
+
+        <!-- Detailed Service Descriptions -->
+        <div class="service-details">
+            <div id="software-development" class="service-detail-box">
+                <h3>Software Development</h3>
+                <p>
+                    Lintel Enterprise provides software solutions tailored to your business needs, 
+                    including web, mobile, and desktop applications. Our services also include database management, cloud integrations, and system automation to streamline your operations.
+                </p>
+            </div>
+
+            <div id="hardware-distribution" class="service-detail-box">
+                <h3>Hardware Distribution</h3>
+                <p>
+                    We distribute high-quality hardware for IT systems including computers, servers, networking devices, and specialized sensors. 
+                    Our offerings ensure reliability, warranty support, and compatibility with your existing infrastructure.
+                </p>
+            </div>
+
+            <div id="cybersecurity-consulting" class="service-detail-box">
+                <h3>Cybersecurity Consulting</h3>
+                <p>
+                    Our cybersecurity team provides risk assessments, security audits, and consulting to protect your data, networks, and IT infrastructure. 
+                    We help implement best practices and compliance measures for business continuity and data privacy.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    © 2025 Lintel Enterprise. All rights reserved.
+</footer>
+
+<!-- ===================== JS for Expandable Services ===================== -->
+<script>
+    const services = document.querySelectorAll('.service');
+    const detailBoxes = document.querySelectorAll('.service-detail-box');
+
+    services.forEach(service => {
+        service.addEventListener('click', () => {
+            const targetId = service.getAttribute('data-target');
+            const targetBox = document.getElementById(targetId);
+
+            // Toggle active class for the clicked box
+            if (targetBox.classList.contains('active')) {
+                targetBox.classList.remove('active');
+            } else {
+                // Close all others
+                detailBoxes.forEach(box => box.classList.remove('active'));
+                // Open the clicked one
+                targetBox.classList.add('active');
+                // Scroll to it
+                targetBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
